@@ -17,7 +17,8 @@ def stereo_rectify(frame_parameter_file, left_raw, right_raw):
         rotation = np.array(camera_parameter['R'])
         translation = np.reshape(np.array(camera_parameter['T']),(3,1))
 
-        img_size = left_raw.shape[:2]
+        img_size = left_raw.shape[1::-1]
+        print(img_size)
 
 
         R1, R2, P1, P2, Q, ROI_l, ROI_r = cv2.stereoRectify(l_camera_matrix, l_dist_coeff, r_camera_matrix, r_dist_coeff, img_size, rotation, translation)
@@ -27,10 +28,10 @@ def stereo_rectify(frame_parameter_file, left_raw, right_raw):
 
         print('map shape:' + str(mapLx.shape) + str(mapLy.shape))
 
-        left_finalpass_savepath = cv2.remap(left_raw, mapLx, mapLy, cv2.INTER_LINEAR)
-        right_finalpass_savepath = cv2.remap(right_raw,mapRx, mapRy, cv2.INTER_LINEAR)
+        left_finalpass = cv2.remap(left_raw, mapLx, mapLy, cv2.INTER_LINEAR)
+        right_finalpass = cv2.remap(right_raw,mapRx, mapRy, cv2.INTER_LINEAR)
 
-        return left_finalpass_savepath, right_finalpass_savepath, Q
+        return left_finalpass, right_finalpass, Q
 
 
 def save_Q(Q, reprojection_file):
@@ -64,14 +65,14 @@ def main():
             left_raw = cv2.imread(left_raw_file)
             right_raw = cv2.imread(right_raw_file)
             print(frame_para_file)
-            left_finalpass, right__finalpass, Q = stereo_rectify(frame_para_file, left_raw, right_raw)
+            left_finalpass, right_finalpass, Q = stereo_rectify(frame_para_file, left_raw, right_raw)
 
 
             # save final pass image and reprojection matrix
             left_finalpass_savefile = join(rootpath, kf) + '/data/left_finalpass/' + sf
             right_finalpass_savefile = join(rootpath, kf) + '/data/right_finalpass/' + sf
             reprojection_file = join(rootpath, kf) + '/data/reprojection_data/' + filename + '.json'
-            save_finalpass(left_finalpass, right__finalpass, left_finalpass_savefile, right_finalpass_savefile)
+            save_finalpass(left_finalpass, right_finalpass, left_finalpass_savefile, right_finalpass_savefile)
             save_Q(Q, reprojection_file)
 
 if __name__ == '__main__':

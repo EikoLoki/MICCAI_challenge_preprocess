@@ -24,7 +24,7 @@ def parse_video(video_file, rgb_filepath):
 
 
 def main():
-    rootpath = '/home/eikoloki/Documents/MICCAI_SCARED/dataset1'
+    rootpath = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset2'
 
     keyframe_list = [join(rootpath, kf) for kf in listdir(rootpath) if ('keyframe' in kf and 'ignore' not in kf)]
     for kf in keyframe_list:

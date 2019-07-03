@@ -23,15 +23,21 @@ def read_camera_para(parameter_file):
 
 def tiff_reader(tiff_file):
     raw = tiff.imread(tiff_file)
-    img = raw[:1024,:,:]
-    print(img.shape, img.dtype)
-    x = img[:,:,0]
-    y = img[:,:,1]
-    z = img[:,:,2]
+    img_l = raw[:1024,:,:]
+    img_r = raw[1024:,:,:]
+    print(img_l.shape, img_l.dtype)
+    print(img_r.shape, img_r.dtype)
 
+    z_l = img_l[:,:,2]
+    z_r = img_r[:,:,2]
 
-    z[z > 200] = 0
-    z[z < 50] = 0
+    z_l[z_l > 500] = 0
+    z_r[z_r > 500] = 0
+    z_l[z_l < 20] = 0
+    z_r[z_r < 20] = 0
+
+    z_l = (z_l - z_l.min()) / z_l.max() * 255
+    z_r = (z_r - z_r.min()) / z_r.max() * 255
     #plt.imshow(z)
     #plt.show()
 
@@ -52,9 +58,9 @@ def tiff_reader(tiff_file):
     """
 
 
-    return img
+    return img_l, img_r
 
-def reprojection(PointCloud, l_camera_matrix, l_dist_coeff, r_camera_matrix, r_dist_coeff):
+def reprojection(PointCloud, l_camera_matrix, l_dist_coeff):
     rvec = np.zeros((3,1))
     tvec = np.zeros((3,1))
     size = PointCloud.shape[:2]
@@ -68,12 +74,20 @@ def reprojection(PointCloud, l_camera_matrix, l_dist_coeff, r_camera_matrix, r_d
     for i in range(img.shape[0]):
         x = int(img[i,0])
         y = int(img[i,1])
-        print(x,',', y)
         if x < size[1] and y < size[0]:
             reproject_img[y,x] = PointCloud[i,2]
 
+
+    count = 0
+    for i in range(reproject_img.shape[0]):
+        for j in range(reproject_img.shape[1]):
+            if reproject_img[i,j] == 0:
+                count += 1
+
+    print('hollow point:', count)
     plt.imshow(reproject_img)
     plt.show()
+    return reproject_img
 
 
 def main():
@@ -85,8 +99,14 @@ def main():
     camera_file = join(rootpath, frame_data_file)
 
     l_camera_matrix, r_camera_matrix, l_dist_coeff, r_dist_coeff = read_camera_para(camera_file)
-    img = tiff_reader(depth_file)
-    reprojection(img, l_camera_matrix, l_dist_coeff, r_camera_matrix, r_dist_coeff)
+    img_l, img_r = tiff_reader(depth_file)
+    repro_l = reprojection(img_l, l_camera_matrix, l_dist_coeff)
+    repro_r = reprojection(img_r, r_camera_matrix, r_dist_coeff)
+
+
+    save_path = 'keyframe_3/data/test_data000000.png'
+
+    cv2.imwrite(join(rootpath,save_path),repro_l)
 
     """
     l_camera_matrix, r_camera_matrix, l_dist_coeff, r_dist_coeff = read_camera_para(camera_file)
