@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be60b55-022a-4fde-b15b-60da491141d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/depth_to_disp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all_ in_one.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/depth_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/depth_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/depth_to_disp.py" beforeDir="false" afterPath="$PROJECT_DIR$/depth_to_disp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_scissor.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_scissor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stereo_rectify.py" beforeDir="false" afterPath="$PROJECT_DIR$/stereo_rectify.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/video_parser.py" afterDir="false" />
@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+            <state relative-caret-position="512">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -33,20 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/depth_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="82" column="47" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/depth_to_disp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+            <state relative-caret-position="212">
+              <caret line="94" column="66" selection-start-line="94" selection-start-column="66" selection-end-line="94" selection-end-column="66" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -55,10 +43,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/depth_to_disp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="82" column="78" selection-start-line="82" selection-start-column="78" selection-end-line="82" selection-end-column="78" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/all_ in_one.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_scissor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+            <state relative-caret-position="450">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -69,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stereo_rectify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-388">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="-283">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -91,6 +103,7 @@
     <findStrings>
       <find>splitext</find>
       <find>plt</find>
+      <find>stereo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,11 +115,12 @@
         <option value="$PROJECT_DIR$/depthReader.py" />
         <option value="$PROJECT_DIR$/venv/image_scissor.py" />
         <option value="$PROJECT_DIR$/depth_to_disparity.py" />
-        <option value="$PROJECT_DIR$/stereo_rectify.py" />
-        <option value="$PROJECT_DIR$/depth_to_disp.py" />
         <option value="$PROJECT_DIR$/depth_reader.py" />
+        <option value="$PROJECT_DIR$/stereo_rectify.py" />
         <option value="$PROJECT_DIR$/video_parser.py" />
+        <option value="$PROJECT_DIR$/all_ in_one.py" />
         <option value="$PROJECT_DIR$/image_scissor.py" />
+        <option value="$PROJECT_DIR$/depth_to_disp.py" />
       </list>
     </option>
   </component>
@@ -152,7 +166,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.video_parser">
+  <component name="RunManager" selected="Python.all_ in_one">
+    <configuration name="all_ in_one" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="dataParser" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/all_ in_one.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="depth_reader" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="dataParser" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -237,31 +272,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="video_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="dataParser" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_parser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.video_parser" />
         <item itemvalue="Python.depth_to_disp" />
+        <item itemvalue="Python.all_ in_one" />
         <item itemvalue="Python.depth_reader" />
         <item itemvalue="Python.stereo_rectify" />
         <item itemvalue="Python.image_scissor" />
@@ -334,30 +348,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stereo_rectify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-388">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/depth_to_disp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/depth_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="82" column="47" selection-start-line="82" selection-start-column="47" selection-end-line="82" selection-end-column="47" />
+        <state relative-caret-position="212">
+          <caret line="94" column="66" selection-start-line="94" selection-start-column="66" selection-end-line="94" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stereo_rectify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-283">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="52" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -366,18 +370,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/video_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="512">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/all_ in_one.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/image_scissor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="21" column="66" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+        <state relative-caret-position="450">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/depth_to_disp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="82" column="78" selection-start-line="82" selection-start-column="78" selection-end-line="82" selection-end-column="78" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

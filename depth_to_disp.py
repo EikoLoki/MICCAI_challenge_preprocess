@@ -63,8 +63,8 @@ def coor_to_disp(coor, Q):
 
 
     #print(disp.max(), disp.min())
-    plt.imshow(disp)
-    plt.show()
+    #plt.imshow(disp)
+    #plt.show()
     return disp
 
 def read_Q(reprojection_file):
@@ -76,9 +76,9 @@ def read_Q(reprojection_file):
         return  Q
 
 
-def main():
-    rootpath = '/home/eikoloki/Documents/MICCAI_SCARED/dataset1'
-    keyframe_list = [join(rootpath, kf) for kf in listdir(rootpath) if ('keyframe' in kf and 'ignore' not in kf)]
+def main(path):
+    rootpath = path
+    keyframe_list = ['keyframe_4']
     for kf in keyframe_list:
         reprojection_filepath = join(rootpath, kf) + '/data/reprojection_data'
         coor_filepath = join(rootpath,kf) + '/data/scene_points'
@@ -100,4 +100,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    path = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset2'
+    main(path)

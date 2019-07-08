@@ -5,7 +5,7 @@ import json
 import numpy as np
 
 
-def stereo_rectify(frame_parameter_file, left_raw, right_raw):
+def rectify(frame_parameter_file, left_raw, right_raw):
     with open(frame_parameter_file) as para_json_file:
         data = json.load(para_json_file)
         camera_parameter = data['camera-calibration']
@@ -45,9 +45,9 @@ def save_finalpass(left_img, right_img, left_file, right_file):
     cv2.imwrite(right_file, right_img)
 
 
-def main():
+def stereo_rectify(path):
 
-    rootpath = '/home/eikoloki/Documents/MICCAI_SCARED/dataset1'
+    rootpath = path
 
     keyframe_list = [join(rootpath, kf) for kf in listdir(rootpath) if ('keyframe' in kf and 'ignore' not in kf)]
     for kf in keyframe_list:
@@ -65,7 +65,7 @@ def main():
             left_raw = cv2.imread(left_raw_file)
             right_raw = cv2.imread(right_raw_file)
             print(frame_para_file)
-            left_finalpass, right_finalpass, Q = stereo_rectify(frame_para_file, left_raw, right_raw)
+            left_finalpass, right_finalpass, Q = rectify(frame_para_file, left_raw, right_raw)
 
 
             # save final pass image and reprojection matrix
@@ -75,5 +75,6 @@ def main():
             save_finalpass(left_finalpass, right_finalpass, left_finalpass_savefile, right_finalpass_savefile)
             save_Q(Q, reprojection_file)
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__stereo_rectify__':
+    path = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset3'
+    stereo_rectify(path)

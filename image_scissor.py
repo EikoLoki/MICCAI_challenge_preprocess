@@ -4,7 +4,7 @@ from os.path import join, split
 import numpy as np
 
 
-def image_scissor(image_file, left_savepath, right_savepath):
+def image_sciss(image_file, left_savepath, right_savepath):
     print('-- current image :' + image_file + " --")
     stacked = cv2.imread(image_file)
     print(stacked.shape)
@@ -18,8 +18,8 @@ def image_scissor(image_file, left_savepath, right_savepath):
 
 
 
-def main():
-    rootpath = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset2'
+def image_scissor(path):
+    rootpath = path
     keyframe_list = [join(rootpath, kf) for kf in listdir(rootpath) if ('keyframe' in kf and 'ignore' not in kf)]
     for kf in keyframe_list:
         stacked_filepath = join(rootpath, kf) + '/data/rgb_data'
@@ -28,9 +28,10 @@ def main():
             image_file = join(stacked_filepath, sf)
             left_savepath = join(rootpath, kf) + '/data/left'
             right_savepath = join(rootpath, kf) + '/data/right'
-            image_scissor(image_file, left_savepath, right_savepath)
+            image_sciss(image_file, left_savepath, right_savepath)
 
 
 if __name__ == '__main__':
-    main()
+    path = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset3'
+    image_scissor(path)
 

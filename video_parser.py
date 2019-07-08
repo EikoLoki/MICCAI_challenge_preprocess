@@ -23,8 +23,8 @@ def parse_video(video_file, rgb_filepath):
     print("total frames: %d" %count)
 
 
-def main():
-    rootpath = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset2'
+def video_parser(path):
+    rootpath = path
 
     keyframe_list = [join(rootpath, kf) for kf in listdir(rootpath) if ('keyframe' in kf and 'ignore' not in kf)]
     for kf in keyframe_list:
@@ -34,5 +34,6 @@ def main():
         parse_video(video_file, rgb_filepath)
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__video_parser__':
+    path = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset3'
+    video_parser(path)
