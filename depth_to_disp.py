@@ -76,7 +76,7 @@ def read_Q(reprojection_file):
         return  Q
 
 
-def main(path):
+def depth_to_disparity(path):
     rootpath = path
     keyframe_list = ['keyframe_4']
     for kf in keyframe_list:
@@ -101,4 +101,4 @@ def main(path):
 
 if __name__ == '__main__':
     path = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset2'
-    main(path)
+    depth_to_disparity(path)

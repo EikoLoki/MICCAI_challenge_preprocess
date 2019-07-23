@@ -92,9 +92,9 @@ def reprojection(PointCloud, l_camera_matrix, l_dist_coeff):
 
 def main():
 
-    rootpath = '/media/eikoloki/TOSHIBA EXT/MICCAI_SCARED/dataset3'
-    testpath = 'keyframe_2/data/scene_points/scene_points000000.tiff'
-    frame_data_file = 'keyframe_2/data/frame_data/frame_data000000.json'
+    rootpath = '/media/xiran_zhang/TOSHIBA EXT/MICCAI_SCARED/dataset3'
+    testpath = 'keyframe_1/data/scene_points/scene_points000000.tiff'
+    frame_data_file = 'keyframe_1/data/frame_data/frame_data000000.json'
     depth_file = join(rootpath, testpath)
     camera_file = join(rootpath, frame_data_file)
 
@@ -104,9 +104,12 @@ def main():
     repro_r = reprojection(img_r, r_camera_matrix, r_dist_coeff)
 
 
-    save_path = 'keyframe_2/data/test_data000000.png'
+    save_path = 'keyframe_2/data/test_data000200.png'
 
-    cv2.imwrite(join(rootpath,save_path),repro_l)
+    cv2.imshow('test', repro_l)
+    cv2.waitKey()
+
+    #cv2.imwrite(join(rootpath,save_path),repro_l)
 
     """
     l_camera_matrix, r_camera_matrix, l_dist_coeff, r_dist_coeff = read_camera_para(camera_file)
